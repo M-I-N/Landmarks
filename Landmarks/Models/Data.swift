@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+ See LICENSE folder for this sample’s licensing information.
 
-Abstract:
-Helpers for loading images and data.
-*/
+ Abstract:
+ Helpers for loading images and data.
+ */
 
 import UIKit
 import SwiftUI
@@ -49,7 +49,7 @@ final class ImageStore {
             ?? _sizeImage(images.values[index][ImageStore.originalSize]!, to: size * ImageStore.scale)
         images.values[index][size] = sizedImage
         
-        return Image(sizedImage, scale: Length(ImageStore.scale), label: Text(verbatim: name))
+        return Image(sizedImage, scale: CGFloat(ImageStore.scale), label: Text(verbatim: name))
     }
     
     fileprivate func _guaranteeInitialImage(name: String) -> _ImageDictionary.Index {

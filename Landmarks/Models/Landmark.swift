@@ -18,6 +18,7 @@ struct Landmark: Codable, Identifiable {
     let state: String
     let park: String
     let category: Category
+    var isFavorite: Bool
 
     var locationCoordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(
@@ -37,5 +38,6 @@ struct Landmark: Codable, Identifiable {
         case featured = "Featured"
         case lakes = "Lakes"
         case rivers = "Rivers"
+        case mountains = "Mountains"
     }
 }
