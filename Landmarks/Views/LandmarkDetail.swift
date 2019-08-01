@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LandmarkDetailView: View {
+struct LandmarkDetail: View {
     @EnvironmentObject var userData: UserData
     let landmark: Landmark
 
@@ -59,10 +59,10 @@ struct LandmarkDetailView: View {
 }
 
 #if DEBUG
-struct LandmarkDetailView_Previews: PreviewProvider {
+struct LandmarkDetail_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData()
-        return LandmarkDetailView(landmark: userData.landmarks[0])
+        return LandmarkDetail(landmark: userData.landmarks[0])
             .environmentObject(userData)
 
     }
