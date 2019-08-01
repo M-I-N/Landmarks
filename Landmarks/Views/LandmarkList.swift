@@ -9,7 +9,8 @@
 import SwiftUI
 
 struct LandmarkList : View {
-    @EnvironmentObject var userData: UserData
+    @EnvironmentObject private var userData: UserData
+
     var body: some View {
         NavigationView {
             List {

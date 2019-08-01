@@ -26,8 +26,8 @@ struct Landmark: Codable, Identifiable {
             longitude: coordinates.longitude)
     }
 
-    func image(forSize size: Int) -> Image {
-        return ImageStore.shared.image(name: imageName, size: size)
+    var image: Image {
+        return ImageStore.shared.image(name: imageName)
     }
 
     struct Coordinates: Codable {

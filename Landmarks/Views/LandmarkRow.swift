@@ -12,7 +12,9 @@ struct LandmarkRow : View {
     let landmark: Landmark
     var body: some View {
         HStack {
-            landmark.image(forSize: 50)
+            landmark.image
+                .resizable()
+                .frame(width: 50, height: 50)
             Text(landmark.name)
             Spacer()
             if landmark.isFavorite {
@@ -27,7 +29,8 @@ struct LandmarkRow : View {
 #if DEBUG
 struct LandmarkRow_Previews : PreviewProvider {
     static var previews: some View {
-        LandmarkRow(landmark: landmarkData[0])
+        let userData = UserData()
+        return LandmarkRow(landmark: userData.landmarks[0])
     }
 }
 #endif
