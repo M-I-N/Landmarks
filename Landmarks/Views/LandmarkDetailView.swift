@@ -1,9 +1,10 @@
-/*
- See LICENSE folder for this sample’s licensing information.
-
- Abstract:
- A view showing the details for a landmark.
- */
+//
+//  LandmarkDetailView.swift
+//  Landmarks
+//
+//  Created by Mufakkharul Islam Nayem on 7/24/19.
+//  Copyright © 2019 Apple. All rights reserved.
+//
 
 import SwiftUI
 

@@ -36,8 +36,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ABC26420ABC23CA000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		ABE71C20ABE715B000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = ../Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		AFDC037222F1A185009DC6F9 /* chilkoottrail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chilkoottrail.jpg; sourceTree = "<group>"; };
 		AFDC037322F1A185009DC6F9 /* umbagog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = umbagog.jpg; sourceTree = "<group>"; };
 		AFDC037422F1A185009DC6F9 /* hiddenlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hiddenlake.jpg; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 		B7394873229F194200C47603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7394879229F1B3F00C47603 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		B739487B229F1B6800C47603 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		C4E4AAA0C4E4035000000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,23 +77,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ABC1C720ABC1D76000000001 /* LICENSE */ = {
-			isa = PBXGroup;
-			children = (
-				ABC26420ABC23CA000000001 /* LICENSE.txt */,
-			);
-			name = LICENSE;
-			path = ../LICENSE;
-			sourceTree = "<group>";
-		};
-		ABE71780ABE7174000000001 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				ABE71C20ABE715B000000001 /* SampleCode.xcconfig */,
-			);
-			name = Configuration;
-			sourceTree = "<group>";
-		};
 		AFE874B622E8357500D74BE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,11 +120,8 @@
 		B7394859229F194000C47603 = {
 			isa = PBXGroup;
 			children = (
-				C4E4AAA0C4E4035000000001 /* README.md */,
 				B7394864229F194000C47603 /* Landmarks */,
 				B7394863229F194000C47603 /* Products */,
-				ABE71780ABE7174000000001 /* Configuration */,
-				ABC1C720ABC1D76000000001 /* LICENSE */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B739485D229F194000C47603 /* Build configuration list for PBXProject "CreatingAndCombiningViews" */;
+			buildConfigurationList = B739485D229F194000C47603 /* Build configuration list for PBXProject "Landmarks" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -303,7 +280,6 @@
 /* Begin XCBuildConfiguration section */
 		B7394874229F194200C47603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE71C20ABE715B000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -364,7 +340,6 @@
 		};
 		B7394875229F194200C47603 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE71C20ABE715B000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -419,7 +394,6 @@
 		};
 		B7394877229F194200C47603 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE71C20ABE715B000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,7 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Landmarks${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nayem-samplecode.Landmarks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -441,7 +415,6 @@
 		};
 		B7394878229F194200C47603 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABE71C20ABE715B000000001 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,7 +426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Landmarks${SAMPLE_CODE_DISAMBIGUATOR}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nayem-samplecode.Landmarks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -464,7 +437,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B739485D229F194000C47603 /* Build configuration list for PBXProject "CreatingAndCombiningViews" */ = {
+		B739485D229F194000C47603 /* Build configuration list for PBXProject "Landmarks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B7394874229F194200C47603 /* Debug */,
