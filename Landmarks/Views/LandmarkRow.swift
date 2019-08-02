@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LandmarkRow : View {
+struct LandmarkRow: View {
     let landmark: Landmark
     var body: some View {
         HStack {
@@ -27,7 +27,7 @@ struct LandmarkRow : View {
 }
 
 #if DEBUG
-struct LandmarkRow_Previews : PreviewProvider {
+struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData()
         return LandmarkRow(landmark: userData.landmarks[0])

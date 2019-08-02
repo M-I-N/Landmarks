@@ -35,9 +35,11 @@ struct LandmarkDetail: View {
                     }) {
                         if self.userData.landmarks[self.landmarkIndex].isFavorite {
                             Image(systemName: "star.fill")
+                                .imageScale(.large)
                                 .foregroundColor(.orange)
                         } else {
                             Image(systemName: "star.fill")
+                                .imageScale(.large)
                                 .foregroundColor(.gray)
                         }
                     }

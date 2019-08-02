@@ -110,9 +110,9 @@
 		AFE874D822E8436A00D74BE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF4A948222F2F9DC00676746 /* LandmarkDetail.swift */,
 				AFE874D622E839C400D74BE2 /* LandmarkList.swift */,
 				AFE874D422E836AF00D74BE2 /* LandmarkRow.swift */,
+				AF4A948222F2F9DC00676746 /* LandmarkDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
