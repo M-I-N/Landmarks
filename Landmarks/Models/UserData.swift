@@ -13,6 +13,7 @@ final class UserData: ObservableObject {
 
     @Published var showFavoritesOnly = false
     @Published var landmarks = [Landmark]()
+    @Published var isFetchInProgress = false
 
     private let client: LandmarksClient
 
@@ -21,7 +22,9 @@ final class UserData: ObservableObject {
     }
 
     func fetch() {
+        isFetchInProgress = true
         client.fetchLandmarks(from: LandmarksEndpoint()) { [weak self] result in
+            self?.isFetchInProgress = false
             switch result {
             case .success(let landmarksResponse):
                 self?.landmarks = landmarksResponse.landmarks
