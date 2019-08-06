@@ -12,6 +12,24 @@ import Combine
 final class UserData: ObservableObject {
 
     @Published var showFavoritesOnly = false
-    @Published var landmarks = landmarkData
+    @Published var landmarks = [Landmark]()
+
+    private let client: LandmarksClient
+
+    init(client: LandmarksClient) {
+        self.client = client
+    }
+
+    func fetch() {
+        client.fetchLandmarks(from: LandmarksEndpoint()) { [weak self] result in
+            switch result {
+            case .success(let landmarksResponse):
+                self?.landmarks = landmarksResponse.landmarks
+            case .failure(let error):
+                print(error.customDescription)
+                self?.landmarks = []
+            }
+        }
+    }
 
 }

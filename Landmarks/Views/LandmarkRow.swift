@@ -29,7 +29,7 @@ struct LandmarkRow: View {
 #if DEBUG
 struct LandmarkRow_Previews: PreviewProvider {
     static var previews: some View {
-        let userData = UserData()
+        let userData = UserData(client: LandmarksClient())
         return LandmarkRow(landmark: userData.landmarks[0])
     }
 }
