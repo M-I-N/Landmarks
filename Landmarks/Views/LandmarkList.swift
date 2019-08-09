@@ -12,28 +12,21 @@ struct LandmarkList: View {
     @EnvironmentObject private var userData: UserData
 
     var body: some View {
-        ActivityIndicatorView(isShowing: $userData.isFetchInProgress) {
-            NavigationView {
-                List {
-                    if self.userData.landmarks.count > 0 {
-                        Toggle(isOn: self.$userData.showFavoritesOnly) {
-                            Text("Favorites Only")
-                        }
-                        ForEach(self.userData.landmarks) { landmark in
-                            if !self.userData.showFavoritesOnly || landmark.isFavorite {
-                                NavigationLink(destination: LandmarkDetail(landmark: landmark).environmentObject(self.userData)) {
-                                    LandmarkRow(landmark: landmark)
-                                }
-                            }
+        List {
+            if self.userData.landmarks.count > 0 {
+                Toggle(isOn: self.$userData.showFavoritesOnly) {
+                    Text("Favorites Only")
+                }
+                ForEach(self.userData.landmarks) { landmark in
+                    if !self.userData.showFavoritesOnly || landmark.isFavorite {
+                        NavigationLink(destination: LandmarkDetail(landmark: landmark)) {
+                            LandmarkRow(landmark: landmark)
                         }
                     }
                 }
-                .navigationBarTitle(Text("Landmarks"))
             }
         }
-        .onAppear {
-            self.userData.fetch()
-        }
+        .navigationBarTitle(Text("Landmarks"))
     }
 }
 

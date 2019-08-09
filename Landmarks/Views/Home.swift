@@ -9,27 +9,35 @@
 import SwiftUI
 
 struct Home: View {
-
     @EnvironmentObject var userData: UserData
 
     var body: some View {
-        NavigationView {
-            ScrollView(.vertical, showsIndicators: true, content: {
-                VStack {
-                    if userData.landmarks.count > 0 {
-                        FeaturedLandmarks(landmarks: userData.featured)
-                            .scaledToFill()
-                            .frame(height: 200)
-                            .clipped()
+        ActivityIndicatorView(isShowing: $userData.isFetchInProgress) {
+            NavigationView {
+                ScrollView(.vertical, showsIndicators: true, content: {
+                    VStack {
+                        if self.userData.landmarks.count > 0 {
+
+                            FeaturedLandmarks(landmarks: self.userData.featured)
+                                .scaledToFill()
+                                .frame(height: 200)
+                                .clipped()
+                                .listRowInsets(EdgeInsets())
+
+                            ForEach(self.userData.categories.keys.sorted(), id: \.self) { key in
+                                CategoryRow(categoryName: key, items: self.userData.categories[key]!)
+                            }
                             .listRowInsets(EdgeInsets())
-                        ForEach(userData.categories.keys.sorted(), id: \.self) { key in
-                            CategoryRow(categoryName: key, items: self.userData.categories[key]!)
+
+                            NavigationLink(destination: LandmarkList()) {
+                                Text("See All")
+                            }
+
                         }
-                        .listRowInsets(EdgeInsets())
                     }
-                }
-            })
-            .navigationBarTitle("Featured")
+                })
+                .navigationBarTitle("Featured")
+            }
         }
         .onAppear {
             self.userData.fetch()
