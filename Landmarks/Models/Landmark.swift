@@ -19,6 +19,7 @@ struct Landmark: Codable, Identifiable {
     let park: String
     let category: Category
     var isFavorite: Bool
+    let isFeatured: Bool
 
     var locationCoordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(

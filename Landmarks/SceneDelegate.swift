@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let userData = UserData(client: LandmarksClient())
-            window.rootViewController = UIHostingController(rootView: LandmarkList().environmentObject(userData))
+            window.rootViewController = UIHostingController(rootView: Home().environmentObject(userData))
             self.window = window
             window.makeKeyAndVisible()
         }

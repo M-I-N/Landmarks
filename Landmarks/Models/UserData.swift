@@ -21,6 +21,14 @@ final class UserData: ObservableObject {
         self.client = client
     }
 
+    var categories: [String: [Landmark]] {
+        .init(grouping: landmarks) { $0.category.rawValue }
+    }
+
+    var featured: [Landmark] {
+        landmarks.filter { $0.isFeatured }
+    }
+
     func fetch() {
         isFetchInProgress = true
         client.fetchLandmarks(from: LandmarksEndpoint()) { [weak self] result in
