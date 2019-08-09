@@ -14,19 +14,21 @@ struct Home: View {
 
     var body: some View {
         NavigationView {
-            List {
-                if userData.landmarks.count > 0 {
-                    FeaturedLandmarks(landmarks: userData.featured)
-                        .scaledToFill()
-                        .frame(height: 200)
-                        .clipped()
+            ScrollView(.vertical, showsIndicators: true, content: {
+                VStack {
+                    if userData.landmarks.count > 0 {
+                        FeaturedLandmarks(landmarks: userData.featured)
+                            .scaledToFill()
+                            .frame(height: 200)
+                            .clipped()
+                            .listRowInsets(EdgeInsets())
+                        ForEach(userData.categories.keys.sorted(), id: \.self) { key in
+                            CategoryRow(categoryName: key, items: self.userData.categories[key]!)
+                        }
                         .listRowInsets(EdgeInsets())
-                    ForEach(userData.categories.keys.sorted(), id: \.self) { key in
-                        CategoryRow(categoryName: key, items: self.userData.categories[key]!)
                     }
-                    .listRowInsets(EdgeInsets())
                 }
-            }
+            })
             .navigationBarTitle("Featured")
         }
         .onAppear {
