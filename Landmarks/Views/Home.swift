@@ -11,6 +11,15 @@ import SwiftUI
 struct Home: View {
     @EnvironmentObject var userData: UserData
 
+    var userProfileButton: some View {
+        Button(action: {
+            self.userData.showUserProfile.toggle()
+        }) {
+            Image(systemName: "person.crop.circle.fill")
+            .imageScale(.large)
+        }
+    }
+
     var body: some View {
         ActivityIndicatorView(isShowing: $userData.isFetchInProgress) {
             NavigationView {
@@ -36,7 +45,11 @@ struct Home: View {
                         }
                     }
                 })
-                .navigationBarTitle("Featured")
+                    .navigationBarTitle("Featured")
+                    .navigationBarItems(trailing: self.userProfileButton)
+                    .sheet(isPresented: self.$userData.showUserProfile) {
+                        Text("User Profile")
+                }
             }
         }
         .onAppear {

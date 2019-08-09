@@ -14,6 +14,7 @@ final class UserData: ObservableObject {
     @Published var showFavoritesOnly = false
     @Published var landmarks = [Landmark]()
     @Published var isFetchInProgress = false
+    @Published var showUserProfile = false
 
     private let client: LandmarksClient
 
