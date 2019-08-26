@@ -23,7 +23,7 @@ struct Home: View {
     var body: some View {
         ActivityIndicatorView(isShowing: $userData.isFetchInProgress) {
             NavigationView {
-                ScrollView(.vertical, showsIndicators: true, content: {
+                ScrollView(.vertical, showsIndicators: true) {
                     VStack {
                         if self.userData.landmarks.count > 0 {
 
@@ -44,11 +44,11 @@ struct Home: View {
 
                         }
                     }
-                })
-                    .navigationBarTitle("Featured")
-                    .navigationBarItems(trailing: self.userProfileButton)
-                    .sheet(isPresented: self.$userData.showUserProfile) {
-                        Text("User Profile")
+                }
+                .navigationBarTitle("Featured")
+                .navigationBarItems(trailing: self.userProfileButton)
+                .sheet(isPresented: self.$userData.showUserProfile) {
+                        ProfileHost()
                 }
             }
         }
