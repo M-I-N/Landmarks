@@ -31,15 +31,30 @@ struct Home: View {
                                 .scaledToFill()
                                 .frame(height: 200)
                                 .clipped()
-                                .listRowInsets(EdgeInsets())
+
+                            Divider().padding(.leading)
 
                             ForEach(self.userData.categories.keys.sorted(), id: \.self) { key in
-                                CategoryRow(categoryName: key, items: self.userData.categories[key]!)
+                                VStack {
+                                    CategoryRow(categoryName: key, items: self.userData.categories[key]!)
+                                    Divider().padding(.leading)
+                                }
                             }
-                            .listRowInsets(EdgeInsets())
 
                             NavigationLink(destination: LandmarkList()) {
-                                Text("See All")
+                                VStack {
+                                    HStack {
+                                        Text("See All")
+                                            .font(.headline)
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                            .imageScale(.medium)
+                                    }
+                                    .padding(.trailing)
+                                    .foregroundColor(.primary)
+                                    Divider()
+                                }
+                                .padding(.leading)
                             }
 
                         }
