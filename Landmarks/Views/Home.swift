@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct Home: View {
-    @EnvironmentObject var userData: UserData
+    @EnvironmentObject private var userData: UserData
 
     var userProfileButton: some View {
         Button(action: {
@@ -66,9 +66,6 @@ struct Home: View {
                         ProfileHost()
                 }
             }
-        }
-        .onAppear {
-            self.userData.fetch()
         }
     }
 }
