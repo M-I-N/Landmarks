@@ -12,7 +12,7 @@ struct ProfileHost: View {
 
     @Environment(\.editMode) var editMode
     @Environment(\.presentationMode) var presentationMode
-    @State var profile = Profile.default
+    @State private var profile = Profile.default
     @State private var draftProfile = Profile.default
 
     var body: some View {
