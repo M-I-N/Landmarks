@@ -28,7 +28,7 @@ struct CategoryRow: View {
                 }
                 .padding(15)
             }
-            .frame(height: 185)
+            .frame(height: 225)
         }
     }
 }
@@ -40,12 +40,15 @@ struct CategoryItem: View {
             landmark.image
                 .renderingMode(.original)
                 .resizable()
-                .frame(width: 155, height: 155)
+                .frame(height: 155)
                 .cornerRadius(5)
             Text(landmark.name)
                 .font(.caption)
                 .foregroundColor(.primary)
+                .lineLimit(2)
+                .padding(.horizontal, 0)
         }
+        .frame(width: 155)
     }
 }
 
