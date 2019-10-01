@@ -31,17 +31,12 @@ struct LandmarkDetail: View {
                     Text(landmark.name)
                         .font(.title)
                     Button(action: {
-                        self.userData.landmarks[self.landmarkIndex].isFavorite.toggle()
+                        withAnimation { self.userData.landmarks[self.landmarkIndex].isFavorite.toggle() }
                     }) {
-                        if self.userData.landmarks[self.landmarkIndex].isFavorite {
-                            Image(systemName: "star.fill")
-                                .imageScale(.large)
-                                .foregroundColor(.orange)
-                        } else {
-                            Image(systemName: "star.fill")
-                                .imageScale(.large)
-                                .foregroundColor(.gray)
-                        }
+                        Image(systemName: "star.fill")
+                            .imageScale(.large)
+                            .foregroundColor(self.userData.landmarks[self.landmarkIndex].isFavorite ? .orange : .gray)
+                            .rotationEffect(.degrees(self.userData.landmarks[self.landmarkIndex].isFavorite ? 360 : 0))
                     }
                 }
                 HStack(alignment: .top) {
