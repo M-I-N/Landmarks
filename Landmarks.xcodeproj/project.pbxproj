@@ -158,6 +158,7 @@
 				AFE874D622E839C400D74BE2 /* LandmarkList.swift */,
 				AFE874D422E836AF00D74BE2 /* LandmarkRow.swift */,
 				AF4A948222F2F9DC00676746 /* LandmarkDetail.swift */,
+				AF4C2CF22313D94300C53344 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,7 +194,6 @@
 			children = (
 				B7394865229F194000C47603 /* AppDelegate.swift */,
 				B7394867229F194000C47603 /* SceneDelegate.swift */,
-				AF4C2CF22313D94300C53344 /* Profile */,
 				AFE874B622E8357500D74BE2 /* Models */,
 				AFE874D822E8436A00D74BE2 /* Views */,
 				B739487D229F1C0100C47603 /* Supporting Views */,

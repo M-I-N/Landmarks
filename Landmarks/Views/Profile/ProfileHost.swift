@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ProfileHost: View {
 
-    @Environment(\.editMode) var editMode
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.editMode) private var editMode
+    @Environment(\.presentationMode) private var presentationMode
     @State private var profile = Profile.default
     @State private var draftProfile = Profile.default
 

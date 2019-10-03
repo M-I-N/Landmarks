@@ -12,7 +12,7 @@ struct LandmarkDetail: View {
     @EnvironmentObject private var userData: UserData
     let landmark: Landmark
 
-    var landmarkIndex: Int {
+    private var landmarkIndex: Int {
         userData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
 
